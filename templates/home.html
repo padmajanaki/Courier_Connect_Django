@@ -1,0 +1,148 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=" width-device-width,initial-scale-1.0">
+    <title>Courier</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+</head>
+
+<body>{% csrf_token %}
+    <nav class="navbar">
+        <div class="logo">
+            Courier Connect
+        </div>
+        <ul class="some">
+            <li><a href="#home">Home</a></li>
+            <li><a href="{% url 'login' %}">Track</a></li>
+            <li><a href="#Services">Services</a></li>
+            <li><a href="#About">About</a></li>
+            <li><a href="#Contact">Contact</a></li>
+        </ul>
+        <div class="btn-container">
+            <a href="{% url 'login' %}"><button class="btn">Register/log In</button></a>
+        </div>
+    </nav>
+    <div class="image-container">
+        <img src="{% static 'images/website.webp' %}" alt="Your Image Description">
+    </div>
+    <section id="home">
+        <div class="text-box">
+            <h1>Bringing the World to Your Door</h1>
+            <P><b><i>A courier service of choice for shiping parcels featuring the most competitive rates and a
+                        user-friendly shipping and tracking experience.<br></i></b></P><br><br>
+            <a href="{% url 'loginn' %}" style="text-decoration: none;"><button class="button1">Register parcel</button ></a>
+        </div>
+    </section>
+    <section id="About">
+        <h1 class="heading"> HOW IT WORKS</h1>
+        <div class="about">
+            <div class="image-with-text">
+                <img src="{% static 'images/imh.jpg' %}" alt="My Pic"
+                    style=" border-radius: 50%; display: block; width: 350px; height: 250px;" class="im">
+                <h2>01 Register Parcel</h2>
+            </div>
+            <div class="image-with-text">
+                <img  src="{% static 'images/imgg3.jpg' %}" alt="My Pic" style="border-radius: 50%; width: 350px; height: 250px;"  class="im">
+                <h2>02 Track Shipment</h2>
+            </div>
+            <div class="image-with-text">
+                <img src="{% static 'images/img.jpg' %}" alt="My Pic" style="border-radius: 50%; width: 350px; height: 250px;"  class="im">
+                <h2>03 Recieve Shipment</h2>
+            </div>
+            <div class="name">
+                <h2 style="display: inline;"></h2>
+                <p></p>
+            </div>
+        </div>
+    </section>
+    <section id="Services">
+        <div class="container">
+            <h2 >Our Services</h2>
+            <section class="services">
+                <div class="card">
+                    <div class="content">
+                        <div class="title">Standard Delivery</div>
+                        <p class="sam">Our standard delivery service ensures reliable and cost-effective shipping for your packages
+                            and documents, with delivery within specified timeframe.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="title">Parcel Registration</div>
+                        <p class="sam">we offer
+                            our comprehensive Parcel Register Service, designed to streamline the tracking, storage, and
+                            delivery of your parcels with precision and care.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="title">Effortless Parcel Tracking </div>
+                        <p class="sam"> Our Parcel Register Service allows you to easily
+                            track the status and location of your parcels in real-time. Whether you're sending or
+                            receiving packages, you'll always know where they are.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="title">Same-Day and Next-Day Delivery </div>
+                        <p class="sam">For local and urgent shipments, we provide same-day and next-day delivery options, ensuring
+                            your packages reach their destination quickly.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="title">E-commerce Integration </div>
+                        <p class="sam">Seamlessly integrate our services with your e-commerce platform for efficient order
+                            fulfillment and shipping.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="content">
+                        <div class="title">Secure Parcel Storage</div>
+                        <p class="sam">We provide secure and climate-controlled storage facilities for your parcels. With advanced
+                            security measures in place, you can trust that your packages are safe with us until they
+                            reach their intended recipients</p>
+                    </div>
+                </div>
+            </section>
+    </section>
+    <section id="Contact">
+        <br><br>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3818.345418760606!2d81.49179897475393!3d16.858799017818313!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a37b4b3ffffffff%3A0x2ad71378ab4d0898!2sSri%20Vasavi%20Engineering%20College%20and%20pharmacy!5e0!3m2!1sen!2sin!4v1696730993005!5m2!1sen!2sin"
+            width="600" height="450" style="border:50px; padding-left: 80px;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <form class="form" method="POST" action=" ">
+            {% csrf_token %}
+            <h2>CONTACT US</h2>
+            <p type="Name:" ><input placeholder="Write your name here.."  name="first" id="first"></input></p>
+            <p type="Email:" ><input placeholder="Let us know how to contact you back.." name="second" id="second"></input></p>
+            <p type="Message:"><input placeholder="What would you like to tell us.."  name="third" id="third"></input></p>
+            <input type="submit" value="Send Message" class="btn1">
+        </form>
+    </section>
+    <footer>
+        <div class="footer-content">
+            <h3>Courier Connect</h3>
+            <p>We pride ourselves on punctuality and reliability. With a vast network of couriers and advanced tracking
+                technology, we guarantee that your shipments will arrive on time, every time.
+            </p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                <li><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                <li><a href="https://www.google.com/"><i class="fa fa-google-plus"></i></a></li>
+                <li><a href="https://www.youtube.com/@srivasaviengineeringcolleg8758"><i class="fa fa-youtube"></i></a></li>
+                <li><a href="https://in.linkedin.com/?original_referer=https%3A%2F%2Fwww.google.com%2F"><i class="fa fa-linkedin-square"></i></a></li>
+            </ul>
+        </div>
+        <div class="footer-bottom">
+            <p>copyright &copy; <a href="#">Courier Connect</a> </p>
+        </div>
+    </footer>
+</body>
+
+</html>

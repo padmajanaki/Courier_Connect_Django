@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgb(238,174,202);
+            background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+        }
+
+        h1 {
+            text-align: center;
+            
+            color: black;
+            padding: 10px;
+            margin-top: 0;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #d69dd5;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="password"],
+        input[type="number"],
+        select,
+        textarea {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #0056b3;
+        }
+
+        input[type="email"] {
+            width: 90%;
+            padding: 10px;
+        }
+        
+        @media screen and (max-width: 768px) {
+            form {
+                margin: 10px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Courier Registration Form</h1>
+    <form action=" " method="POST">
+        {% csrf_token %}
+        <label for="namee">Senders Name :</label>
+        <input type="text" id="namee" name="namee" pattern="[a-zA-Z]*" required><br><br>
+        <label for="contactPhone">Contact Phone Number:</label>
+        <input type="tel" id="contactPhone" name="contactPhone" pattern="[1-9][0-9]{9}" required><br><br>
+        <label for="senderEmail">Sender's Email:</label>
+        <input type="email" id="senderEmail" name="senderEmail">
+        <label for="pickupAddress">Pickup Address:</label>
+        <textarea id="pickupAddress" name="pickupAddress" rows="4" cols="50" required></textarea><br><br>
+        <label for="emergencyContactName">Recipient Name:</label>
+        <input type="text" id="emergencyContactName" name="emergencyContactName" pattern="[a-zA-Z]*" required><br><br>
+        <label for="emergencyContactPhone">Recipient Phone Number:</label>
+        <input type="tel" id="emergencyContactPhone" name="emergencyContactPhone" pattern="[1-9][0-9]{9}"
+            required><br><br>
+        <label for="receiverEmail">Receiver's Email:</label>
+        <input type="email" id="receiverEmail" name="receiverEmail" required>
+        <label for="deliveryAddress">Delivery Address :</label>
+        <textarea id="deliveryAddress" name="deliveryAddress" rows="4" cols="50" required></textarea><br><br>
+        <label for="pickupTime">Preferred Pickup Time:</label>
+        <input type="text" id="pickupTime" name="pickupTime" required>
+        <select id="ampm" name="ampm" required>
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+        </select><br><br>
+        <label for="packageSize">Package Size:</label>
+        <select id="packageSize" name="packageSize" required>
+            <option value="small">Small</option>
+            <option value="medium">Medium</option>
+            <option value="large">Large</option>
+        </select><br><br>
+        <label for="packageCategory">Package Category:</label>
+        <input type="text" id="packageCategory" name="packageCategory" required><br><br>
+
+        <label for="packageWeight">Weight of Packages(in kgs):</label>
+        <input type="text" inputmode="decimal" id="packageWeight" name="packageWeight"><br><br>
+
+        <label for="serviceType">Preferred Service Type:</label>
+        <select id="serviceType" name="serviceType" required>
+            <option value="standard">Standard</option>
+            <option value="express">Express</option>
+        </select><br><br>
+        <label for="privacyPolicyAgreement">
+            <input type="checkbox" id="privacyPolicyAgreement" name="privacyPolicyAgreement" required>
+            I acknowledge the Privacy Policy
+        </label><br><br>
+        <label for="termsAgreement">
+            <input type="checkbox" id="termsAgreement" name="termsAgreement" required>
+            I agree to the Terms and Conditions
+        </label><br><br>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+
+</html>
